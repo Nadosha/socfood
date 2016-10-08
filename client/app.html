@@ -1,8 +1,8 @@
 <template name="appPage">
 
-		<div class="container">
-
-			<div class="row header" style="background: #FFC845">
+		<section class="container">
+			
+			<header class="row header" style="background: #FFC845">
 				<div class="col-sm-3">
 					<h1>SocFood!</h1>
 				</div>
@@ -12,23 +12,23 @@
 				<div class="col-sm-3">
 					<button id="logout" class="btn btn-warning">Logout</button>
 				</div>
-			</div>
+			</header>
 
-			<div class="row container">
+			<main class="row container">
 				<div class="col-sm-3">
 					{{> usersList}}
 				</div>
 				<div class="col-sm-6">
 
 					{{> messageHistory}}
-					
+
 				</div>
 				<div class="col-sm-3">
 					{{> sellersList}}
 				</div>
-			</div>
+			</main>
 
-			<div class="row footer">
+			<footer class="row footer">
 				<div class="col-sm-3">
 					{{> userInfo}}
 				</div>
@@ -37,9 +37,9 @@
 				</div>
 				<div class="col-sm-3">
 					{{> orderInput}}
-					
 				</div>
-			</div>
-		</div>
+			</footer>
+
+		</section>
 
 </template>
