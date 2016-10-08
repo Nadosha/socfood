@@ -1,8 +1,3 @@
-Template.registration.onRendered(function() {
-	
-});
-
-
 Template.registration.events({
 	'click #registr-submit': function(event) {
 		event.preventDefault();

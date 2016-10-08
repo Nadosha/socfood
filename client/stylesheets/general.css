@@ -1,8 +1,6 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: #338224;
-  color: #02C591;
 }
 
 h1 {
@@ -19,10 +17,6 @@ section {
 header, main, footer {
   width: 100%;
   margin: 0 !important;
-}
-
-.center {
-  text-align: center;
 }
 
 /* unvisited link */
