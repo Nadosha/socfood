@@ -7,6 +7,10 @@ h1 {
   font-size: 24px;
 }
 
+.row, .col-sm-3, .col-sm-6 {
+  margin: 0 !important;
+}
+
 section {
   width: 100% !important;
   height: 100% !important;
@@ -15,8 +19,20 @@ section {
 }
 
 header, main, footer {
-  width: 100%;
+  width: 100% !important;
   margin: 0 !important;
+  padding: 0 !important;
+}
+
+header, footer {
+  height: 10%;
+}
+main {
+  height: 80%;
+}
+
+footer div {
+  height: 100%;
 }
 
 /* unvisited link */
