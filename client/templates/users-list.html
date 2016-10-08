@@ -1,1 +1,21 @@
-<template name="usersList"></template>
+<template name="usersList">
+	<div class="media">
+		{{#each friendshipRequest}}
+			{{#if currentUser.hasRequestFrom this}}
+  			<div class="media-left">
+    			<a href="#">
+      				<img class="media-object" style="width: 64px" src="{{profile.userImg}}">
+    			</a>
+  			</div>
+  			<div class="media-body">
+    			<h4 class="media-heading">{{profile.name}}</h4>
+    			<button class="btn btn-success">acceptRequest</button>
+    			<button class="btn btn-warning">denyRequest</button>
+  			</div>
+  			{{/if}}
+  		{{/each}}
+	</div>
+
+	<button class="btn btn-warning" id="addUser">Find friends</button>
+	<!--Opens Modal with enemy(not friends) users-->
+</template>
