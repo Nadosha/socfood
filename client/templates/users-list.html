@@ -1,1 +1,15 @@
-<template name="usersList"></template>
+<template name="usersList">
+  <div class="users">
+  {{#each usersList}}
+    {{> user}}
+  {{/each}}
+  </div>
+</template>
+
+<template name="user">
+  <div class="user">
+    <img src={{profile.userImg}} alt="{{profile.name}} image" height="50" width="50" />
+    <strong>{{profile.name}}</strong>
+    <p>Status</p>
+  </div>
+</template>
