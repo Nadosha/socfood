@@ -1,3 +1,9 @@
 <template name="userInfo">
-  {{> user}}
+<hr>
+	<div style="margin-top: 10px">
+		<img src="{{userInfo.profile.userImg}}" class="img-responsive" style="max-width: 64px; display: inline">
+  		<h6 style="display: inline; margin-left: 10px">{{userInfo.profile.name}}</h6>
+  		<strong>Online</strong>
+	</div>
+
 </template>
