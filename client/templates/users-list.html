@@ -7,9 +7,13 @@
 </template>
 
 <template name="user">
-  <div class="user">
-    <img src={{profile.userImg}} alt="{{profile.name}} image" height="50" width="50" />
-    <strong>{{profile.name}}</strong>
-    <p>Status</p>
+  <div class="row user">
+    <div class="col-xs-5">
+      <img src={{profile.userImg}} alt="{{profile.name}} image" height="50" width="50" />
+    </div>
+    <div class="col-xs">
+      <strong>{{profile.name}}</strong>
+      <p>Status</p>
+    </div>
   </div>
 </template>
