@@ -1,8 +1,44 @@
 <template name="appPage">
 	<h1>MainPage</h1>
 
-	<img src="{{userTest.profile.userImg}}" class="img-responsible img-rounded">
-	<h3>{{userTest.profile.name}}</h3>
-	<button id="logout" class="btn btn-warning">Logout</button>
+		<div class="container">
+
+			<div class="row header">
+				<div class="col-sm-3">
+					<h1>SocFood!</h1>
+				</div>
+				<div class="col-sm-6">
+					<!--Empty space-->
+				</div>
+				<div class="col-sm-3">
+					<button id="logout" class="btn btn-warning">Logout</button>
+				</div>
+			</div>
+
+			<div class="row container">
+				<div class="col-sm-3">
+					{{> usersList}}
+				</div>
+				<div class="col-sm-6">
+					{{> messageHistory}}
+				</div>
+				<div class="col-sm-3">
+					{{> sellersList}}
+				</div>
+			</div>
+
+			<div class="row footer">
+				<div class="col-sm-3">
+					{{> userInfo}}
+				</div>
+				<div class="col-sm-6">
+					{{> messageInput}}
+				</div>
+				<div class="col-sm-3">
+					{{> orderInput}}
+					
+				</div>
+			</div>
+		</div>
 
 </template>
