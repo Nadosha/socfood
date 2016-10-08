@@ -1,0 +1,32 @@
+<template name="modalUsers">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Find friends</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="list-group" >
+                        {{#each enemyUsers}}
+                            {{> enemyUserItem}}
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="enemyUserItem">
+        <button id="addToFriends" class="list-group-item ">
+            <img src="{{profile.userImg}}" class="img-responsive" style="max-width: 40px">
+            <h5>{{profile.name}}</h5>    
+        </button>
+</template>

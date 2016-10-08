@@ -1,9 +1,13 @@
 <template name="usersList">
-  <div class="users">
-  {{#each usersList}}
-    {{> user}}
+  <div class="media">
+  {{#each friendshipRequest}}
+    {{#if currentUser.hasRequestFrom this}}
+      {{> user}}
+    {{/if}}
   {{/each}}
   </div>
+  <button class="btn btn-warning" id="addUser">Find friends</button>
+	<!--Opens Modal with enemy(not friends) users-->
 </template>
 
 <template name="user">
