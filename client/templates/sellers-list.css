@@ -1,0 +1,6 @@
+#sellerList {
+    width: 150px;
+    height: 150px;
+    overflow: scroll;
+    background-color: #000;
+}
