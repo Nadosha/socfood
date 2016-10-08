@@ -1,23 +1,49 @@
 <template name="usersList">
-  <div class="media">
-  {{#each friendshipRequest}}
-    {{#if currentUser.hasRequestFrom this}}
-      {{> user}}
+
+<p>Some who wants to be your friend</p>
+  {{#each friendshipRequest}}<!--looping threw users collection-->
+    {{#if currentUser.hasRequestFrom this}}<!--Check if user sent request to you-->
+      {{> requestsList}} <!--To template-->
     {{/if}}
   {{/each}}
-  </div>
-  <button class="btn btn-warning" id="addUser">Find friends</button>
+  <hr>
+
+<p>Your friends</p>
+  {{#each userFriends}}<!--Looping threw friends-->
+  	{{> firendsList}}<!--To tamplate-->
+  {{/each}}
+  <hr>
+
+
+  <button class="btn btn-info btn-block" id="addUser">Find friends</button>
 	<!--Opens Modal with enemy(not friends) users-->
 </template>
 
-<template name="user">
-  <div class="row user">
-    <div class="col-xs-5">
-      <img src={{profile.userImg}} alt="{{profile.name}} image" height="50" width="50" />
-    </div>
-    <div class="col-xs">
-      <strong>{{profile.name}}</strong>
-      <p>Status</p>
-    </div>
-  </div>
+
+<!-- Item view of one who request to you-->
+<template name="requestsList"><!--Logic written in users-list.js-->
+  	<div class="media">
+  		<div class="media-left">
+      			<img class="media-object" src="{{profile.userImg}}" style="width:64px">
+  		</div>
+  		<div class="media-body">
+    		<h4 class="media-heading">{{profile.name}}</h4>
+    		<button id="acceptRequest" class="btn btn-success">Accept</button><!--Dont change name of ID-->
+    		<button id="denyRequest" class="btn btn-warning">Deny</button><!--Dont change name of ID-->
+  		</div>
+	</div>
+</template>
+
+
+<!-- Item view of one firend-->
+<template name="firendsList"><!--Logic written in users-list.js-->
+  	<div class="media">
+  		<div class="media-left">
+      			<img class="media-object" src="{{profile.userImg}}" style="width:64px">
+  		</div>
+  		<div class="media-body">
+    		<h4 class="media-heading">{{profile.name}}</h4>
+    		<button class="btn btn-success">Write message</button><!--Dont change name of ID-->
+  		</div>
+	</div>
 </template>
