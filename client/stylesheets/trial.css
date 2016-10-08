@@ -34,3 +34,9 @@ footer {background: #aaa;color:white;}
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
     footer {-webkit-order:3;order:3;}
 }
+
+.article p{
+font-size: 18px;
+font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+}
