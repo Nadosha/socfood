@@ -1,10 +1,41 @@
 <template name="signUp">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<div class="login-page-layout h100 w100" style="padding-top: 60px">
     {{> yield}}
 	</div>
+	{{formTest}}
+  {{> trial}}
 </template>
- 
+
+<template name="trial">
+<div class="flex-container">
+<header>
+  <h1>INFO</h1>
+</header>
+
+
+<img src="http://cdn-3.about-bees.com/graphics/Bee2.gif" alt="Bees" style=" height:400px ; width:400px"
+
+
+
+/>
+
+  
+
+
+<article class="article">
+  
+  <p><strong>WELCOME TO HOMEY! The place where your meals become a social meet!</strong></p>
+  <p>Have you ever wanted different people to rate your cooking skills?
+  HOMEY lets you sell and buy homemade food online, order for more people than yourself and gather with others for eating.You get more quality food plus you get to socialize!
+   </p>
+
+</article>
+
+<footer>HACKUPC 2016</footer>
+</div>
+
+</template>
+
 <template name="registration">
 	<form class="registr" id="registr">
     <img src="/img/homey-logo.png" class="img-responsive" style="max-width: 150px; margin: 10px auto 20px auto">
@@ -25,9 +56,11 @@
 
     <a href="{{pathFor route='login'}}">I have an account</a>
   	<button id="registr-submit" type="submit" class="btn btn-success btn-lg">Sign in</button>
-  	
+
 	</form>
 </template>
+
+
 
 <template name="login">
 	<form class="registr" id="registr">
@@ -44,6 +77,6 @@
 
     <a href="{{pathFor route='registration'}}">I don't have an account</a>
   	<button id="login-submit" type="submit" class="btn btn-success btn-lg">Log in</button>
-  	
+
 	</form>
 </template>
