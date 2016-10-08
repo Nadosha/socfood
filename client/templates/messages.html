@@ -1,5 +1,28 @@
-<template name="messageHistory">
-	{{isHomePage}}
-	<h3 class="text-center">Choose conversation</h3>
-	
+<template name="messageHistory"><!--Main wrapper for messages-->
+	{{#if isHomePage}}<!--Check if user choose conversation-->
+		<h3 class="text-center">Choose conversation</h3><!--if on home page '\' show advise-->
+		{{else}}
+		<div class="messages-head">
+			<span>To: <strong>{{#each interlocator}}{{name}}{{/each}}</strong></span><!--Show companion info -->
+		</div>
+		<div class="chat-box"><!--Container for chat-->
+			<div id="chat-box-wrapper" class="clearfix">
+				{{#each displayMessages}}<!--Looping threw messages in current conversation-->
+					{{> messageItem}}<!--To one message view template-->
+				{{/each}}
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+
+<template name="messageItem"><!--One massage view-->
+	<div class="message-bubble {{whoIs}}"><!--whoIs return '.you' or '.me' - using for left right bubble floating-->
+		<div class="message-bubble-text">
+			{{{ text }}}<!--There is 3 curly breacks to get output with HTML tags-->
+		</div>
+		<div class="message-bubble-time">
+			<p>{{dateFormatTime date}}</p>
+		</div>
+	</div>	
 </template>

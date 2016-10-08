@@ -19,23 +19,23 @@ header, main, footer {
   margin: 0 !important;
 }
 
-/* unvisited link */
+/* unvisited link 
 a:link {
   color: white;
   text-decoration: underline;
 }
-/* visited link */
+/* visited link 
 a:visited {
   color: white;
   text-decoration: underline;
 }
-/* mouse over link */
-a:hover {
+/* mouse over link 
   color: #D68B00;
   text-decoration: underline;;
 }
-/* selected link */
+/* selected link 
 a:active {
   color: white;
   text-decoration: underline;
 }
+*/

@@ -37,13 +37,13 @@
 
 <!-- Item view of one firend-->
 <template name="firendsList"><!--Logic written in users-list.js-->
-  	<div class="media">
+  	<div class="media" name="participant">
   		<div class="media-left">
-      			<img class="media-object" src="{{profile.userImg}}" style="width:64px">
+      			<img class="media-object" src="{{friend.profile.userImg}}" style="width:64px">
   		</div>
   		<div class="media-body">
-    		<h4 class="media-heading">{{profile.name}}</h4>
-    		<button class="btn btn-success">Write message</button><!--Dont change name of ID-->
+    		<h5 class="media-heading">{{friend.profile.name}}</h5>
+        <p>{{lastMessage}}</p>
   		</div>
 	</div>
 </template>

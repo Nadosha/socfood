@@ -15,13 +15,59 @@ Template.usersList.helpers({
 		var friendsId = Meteor.friends.find({userId: currentUser}).map(function(friend) {
 			return friend.friendId;
 		});
-		return Meteor.users.find({_id: {$in: friendsId} });
+		var friendsParticipants = Meteor.conversations.find({_participants: currentUser}).map(function(convers){
+			var participants = convers.participants().map(function(result) {
+				return result.user();
+			});
+			if (participants.length >= 1) {
+				var eachParticipant;
+				participants.forEach(function(a) {
+					eachParticipant = a;
+				});
+			}
+			var lastMessage = convers.lastMessage();
+			if(lastMessage) {
+				var mesFormat = urlify(lastMessage.body);
+				var mesDate = lastMessage.date;
+			} 
+			var pack = {
+					friend: eachParticipant,
+					lastMessage: mesFormat,
+					date: mesDate
+				}
+				console.log(pack);
+			return pack;
+
+		});
+		return friendsParticipants.sort(function(a , b) {
+			return new Date(b.date) - new Date(a.date);
+		});
 	}
 });
 
 Template.usersList.events({
 	'click #addUser': function() {
 		Modal.show('modalUsers'); //settings and views in /client/modal dir
+	},
+	'click [name=participant]': function(event, template) {
+		event.preventDefault();
+
+		var userId = this.friend._id;
+		var user = Meteor.users.findOne({_id:userId});
+		var participants = [userId];
+
+		Meteor.user().findExistingConversationWithUsers(participants, function(error, result){
+    	    if(result){
+				conversationId = result;
+				Router.go('/' + conversationId)
+
+    	    } else {
+				var conversation = new Conversation().save();
+				conversation.addParticipant(user);
+				Router.go('/' + conversation._id);
+			}
+    
+		});
 	}
 });
 
