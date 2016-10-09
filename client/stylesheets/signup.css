@@ -28,6 +28,29 @@
   }
 }
 
+.login-page-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
 .login-page-layout {
   background: #FFD021;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.sentMe a {
+  color: #5bc0de;
+  text-decoration: none;
+}
+.sentMe a:hover {
+  color: #ffd021;
+}
+.teamMates li{
+  list-style: none;
+  display: inline;
 }

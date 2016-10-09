@@ -1,7 +1,13 @@
 <template name="signUp">
-	<div class="login-page-layout h100 w100" style="padding-top: 60px">
+<div class="login-page-wrapper">
+	<div class="login-page-layout" style="padding-top: 60px;">
+    <button id="showInfo" class="btn btn-link"  style="font-size: 54px; color: #fff; top: 10%; right: 30%; position: absolute; outline: none;" >
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+    </button>
     {{> yield}}
 	</div>
+</div>
+{{> infoPage}}
 </template>
 
 
@@ -66,4 +72,18 @@
   	<button id="login-submit" type="submit" class="funbtn funbtn-green btn-lg">Log in</button>
 
 	</form>
+</template>
+
+<template name="infoPage">
+    <div class="h100" id="info" >
+      <div style="margin: 0 auto; width: 40%; padding: 40px 0px 10px 0px">
+        <img style="margin: 0 auto; max-width: 300px" src="https://s-media-cache-ak0.pinimg.com/474x/77/fe/b7/77feb7bc1dd7dbc69127fd33d122cc7b.jpg" class="img-responsive img-rounded">
+        <h1 class="text-center">WELCOME TO HOMEY!</h1>
+        <h3 class="text-center">The place where your meals become a social meet!</h3>
+        <br />
+        <hr>
+        <p>Have you ever wanted different people to rate your cooking skills? HOMEY lets you sell and buy homemade food online, order for more people than yourself and gather with others for eating.You get more quality food plus you get to socialize!</p>
+        
+      </div>
+    </div>
 </template>

@@ -41,3 +41,13 @@ Template.login.events({
 		})
 	}
 })
+
+Template.signUp.events({
+	'click #showInfo': function(event) {
+		event.preventDefault();
+
+		$('body').animate({
+                scrollTop: $("#info").offset().top
+        }, 2000);
+	}
+})
