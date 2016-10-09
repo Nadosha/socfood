@@ -8,29 +8,48 @@
                 </div>
 
                 <div class="modal-body">
-                    <form id="addServiceForm">
-                    	<div class="input-group">
-                    		<label>Name:</label>
-  							<input type="text" class="form-control" placeholder="Username" id="productName">
-						</div>
-						<div class="input-group">
-                    		<label>Description:</label>
-  							<input type="text" class="form-control" placeholder="Username" id="productDescription">
-						</div>
-						<div class="input-group">
-                    		<label>Image url:</label>
-  							<input type="text" class="form-control" placeholder="Username" id="productImageURL">
-						</div>
-						<div class="input-group">
-                    		<label>Price:</label>
-  							<input type="text" class="form-control" placeholder="Username" id="productPrice">
-						</div>
-
-                    </form>
+                    <div class="row">
+                    <div class="col-sm-6">
+                        <form id="addProductsForm">
+                            <div class="input-group">
+                             <div class="input-item">
+                                    <span class="fa fa-cutlery input-helper"></span>
+                                    <input id="serviceName" type="text" name="message-input" placeholder="Which dish" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-item">
+                                    <span class="fa fa-pencil-square-o input-helper"></span>
+                                    <input id="serviceDescription" type="text" name="message-input" placeholder="Description" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-item">
+                                    <span class="fa fa-picture-o input-helper"></span>
+                                    <input id="serviceImageURL" type="text" name="message-input" placeholder="Provide URL for logo" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-item">
+                                    <span class="fa fa-money input-helper"></span>
+                                    <input id="productPrice" type="text" name="message-input" placeholder="Price" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6" style="text-align: center">
+                        {{#if isLogoSrc}}
+                        <i class="fa fa-picture-o fa-5x text-center" aria-hidden="true" style="margin-top: 40px; color: #69696"></i>
+                            {{else}}
+                            <img src="{{logoSrc}}" class="img-responsive">
+                        {{/if}}
+                        
+                    </div>
+                </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="submit-addProductForm" data-dismiss="modal">Add product</button>
+                    <button type="button" class="funbtn funbtn-green block" id="submit-addProductForm" data-dismiss="modal">Add product</button>
                 </div>
 
             </div>

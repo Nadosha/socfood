@@ -20,3 +20,14 @@ console.log(sessionSeller);
 		sweetAlert("Perfect! Product was added =)");
 	}
 });
+
+Template.addProductsForm.helpers({
+	'isLogoSrc': function() {
+		var sGetURL = Session.get('logoUrl');
+		if (!sGetURL) {return true}
+			else {return false}
+	},
+	'logoSrc': function() {
+		return Session.get('logoUrl')
+	}
+})
