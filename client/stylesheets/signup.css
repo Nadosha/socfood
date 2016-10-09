@@ -53,4 +53,15 @@
 .teamMates li{
   list-style: none;
   display: inline;
+  overflow:hidden;
+  height:100%;
+  width:100%;
+  
+}
+.text{
+width:350px;
+margin:0 auto;
+}
+.whitebackground{
+background-color: white;
 }
