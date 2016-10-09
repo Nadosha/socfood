@@ -1,6 +1,8 @@
 <template name="messageHistory"><!--Main wrapper for messages-->
 	{{#if isHomePage}}<!--Check if user choose conversation-->
-		<h3 class="text-center">Choose conversation</h3><!--if on home page '\' show advise-->
+		<h3 class="text-center" style="padding-top: 30%; color: #696969">Choose conversation</h3>
+		<!--if on home page '\' show advise-->
+		<h3 class="text-center" style="color: #ffd021"><i class="fa fa-envelope-o" aria-hidden="true"></i></h3>
 		{{else}}
 		<div class="messages-head">
 			<span>To: <strong>{{#each interlocator}}{{name}}{{/each}}</strong></span><!--Show companion info -->
@@ -19,7 +21,7 @@
 <template name="messageItem"><!--One massage view-->
 	<div class="message-bubble {{whoIs}}"><!--whoIs return '.you' or '.me' - using for left right bubble floating-->
 		<div class="message-bubble-text">
-			{{{ text }}}<!--There is 3 curly breacks to get output with HTML tags-->
+			{{#emojione}}{{{ text }}}{{/emojione}}<!--There is 3 curly breacks to get output with HTML tags-->
 		</div>
 		<div class="message-bubble-time">
 			<p>{{dateFormatTime date}}</p>

@@ -1,57 +1,61 @@
-html, body {
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.header-block {
+  background: #fff;
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: 100%;
+  padding: 1rem;
+  height: 55px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+    .logo {
+      max-width: 110px;
+    }
+
+.content-block {
+  margin-top: 55px;
+  height:calc(100% - 140px);
+  bottom: 65px;
+}
+  .left-block {
+    padding: 10px 5px 10px 5px;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: scroll;
+  }
+  .center-block {
+    padding: 10px 5px 10px 5px;
+  }
+  .right-block {
+    padding: 10px 5px 10px 5px;
+    border-left: 1px solid #e0e0e0;
+    overflow-y: scroll;
+  }
+
+
+/**
+ * Footer Styles
+ */
+
+.footer-block {
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  height: 85px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
 }
 
-h1 {
-  font-size: 24px;
+.media {
+  padding: 5px 10px 5px 10px;
 }
-
-.row, .col-sm-3, .col-sm-6 {
-  margin: 0 !important;
-}
-
-section {
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-header, main, footer {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-header, footer {
-  height: 10%;
-}
-main {
-  height: 80%;
-}
-
-footer div {
-  height: 100%;
-}
-
-/* unvisited link 
-a:link {
-  color: white;
-  text-decoration: underline;
-}
-/* visited link 
-a:visited {
-  color: white;
-  text-decoration: underline;
-}
-/* mouse over link 
-  color: #D68B00;
-  text-decoration: underline;;
-}
-/* selected link 
-a:active {
-  color: white;
-  text-decoration: underline;
-}
-*/

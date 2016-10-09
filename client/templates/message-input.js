@@ -8,7 +8,21 @@ Template.messageInput.events({
 			if (text !== '') {
 				findConver.sendMessage(text);
 			}
+			var $heightOfBlock = $('#chat-box-wrapper').height();
+			$('.chat-box').scrollTop($heightOfBlock);
 			$('[name=message-input]').val('');
 		}
+	}
+});
+
+Template.messageInput.helpers({
+	'isHomePage': function() {
+		var currentRout = Router.current().params.conversationId;
+		console.log(currentRout)
+		if (currentRout == undefined) {
+			return false
+		} else {
+			return true
+		};
 	}
 })

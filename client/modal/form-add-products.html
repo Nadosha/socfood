@@ -1,0 +1,39 @@
+<template name="addProductsForm">
+	<div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Add service</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form id="addServiceForm">
+                    	<div class="input-group">
+                    		<label>Name:</label>
+  							<input type="text" class="form-control" placeholder="Username" id="productName">
+						</div>
+						<div class="input-group">
+                    		<label>Description:</label>
+  							<input type="text" class="form-control" placeholder="Username" id="productDescription">
+						</div>
+						<div class="input-group">
+                    		<label>Image url:</label>
+  							<input type="text" class="form-control" placeholder="Username" id="productImageURL">
+						</div>
+						<div class="input-group">
+                    		<label>Price:</label>
+  							<input type="text" class="form-control" placeholder="Username" id="productPrice">
+						</div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="submit-addProductForm" data-dismiss="modal">Add product</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

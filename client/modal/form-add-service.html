@@ -1,0 +1,52 @@
+<template name="addServiceForm">
+	<div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Add service</h4>
+                </div>
+
+                <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <form id="addServiceForm">
+                            <div class="input-group">
+                             <div class="input-item">
+                                    <span class="fa fa-cutlery input-helper"></span>
+                                    <input id="serviceName" type="text" name="message-input" placeholder="Name of your company" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-item">
+                                    <span class="fa fa-pencil-square-o input-helper"></span>
+                                    <input id="serviceDescription" type="text" name="message-input" placeholder="Description" required>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-item">
+                                    <span class="fa fa-picture-o input-helper"></span>
+                                    <input id="serviceImageURL" type="text" name="message-input" placeholder="Provide URL for logo" required>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-6" style="text-align: center">
+                        {{#if isLogoSrc}}
+                        <i class="fa fa-picture-o fa-5x text-center" aria-hidden="true" style="margin-top: 40px; color: #69696"></i>
+                            {{else}}
+                            <img src="{{logoSrc}}" class="img-responsive">
+                        {{/if}}
+                        
+                    </div>
+                </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="funbtn funbtn-green block" id="submit-addServiceForm" data-dismiss="modal">Add service</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>

@@ -14,7 +14,7 @@ Template.registration.events({
 				userImg: '/img/user.jpg'
 			}
 		}, function(error) {
-			if (error) {console.log(error)}
+			if (error) {Bert.alert(error, 'danger', 'growl-top-right')}
 			else {Router.go('home')}
 		});
 	}
@@ -29,9 +29,12 @@ Template.login.events({
 		var email = $('[name=email]').val();
 		var password = $('[name=password]').val();
 
-
+		
 		Meteor.loginWithPassword(email, password, function(error) {
-			if(error) {console.log(error.reason)}
+			if(error) {
+				console.log(error.message)
+				
+			}
 				else {
 					Router.go('home');
 				}

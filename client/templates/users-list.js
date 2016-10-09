@@ -8,6 +8,7 @@ Template.usersList.helpers({
 			return requester.requesterId;
 		});
 		var result = Meteor.users.find({_id: {$in: sentRequests.concat(resivedRequests)}});
+		
 		return result;
 	},
 	'userFriends': function() {
@@ -42,6 +43,15 @@ Template.usersList.helpers({
 		return friendsParticipants.sort(function(a , b) {
 			return new Date(b.date) - new Date(a.date);
 		});
+	},
+	'isAnyRequests': function() {
+		var currentUser = Meteor.userId();
+		var resivedRequests = Meteor.requests.find({userId: currentUser}).map(function(requester) {
+			return requester.requesterId;
+		});
+		console.log(resivedRequests.length)
+		if (resivedRequests.length < 1) {return 'hidden'}
+			
 	}
 });
 
@@ -75,6 +85,9 @@ Template.usersList.events({
 Template.requestsList.events({
 	'click #acceptRequest': function() {
 		this.acceptFriendshipRequest();
+		var participant = Meteor.users.findOne({_id:this._id});
+		var conversation = new Conversation().save();
+		conversation.addParticipant(participant);
 	},
 	'click #denyRequest': function() {
 		var request = Meteor.requests.findOne({requesterId:this._id, userId:Meteor.userId()});

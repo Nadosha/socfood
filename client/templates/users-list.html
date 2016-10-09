@@ -1,12 +1,15 @@
 <template name="usersList">
 
-<p>Some who wants to be your friend</p>
+
+<div class="{{isAnyRequests}}">
+  <p>Some who wants to be your friend</p>
   {{#each friendshipRequest}}<!--looping threw users collection-->
     {{#if currentUser.hasRequestFrom this}}<!--Check if user sent request to you-->
       {{> requestsList}} <!--To template-->
     {{/if}}
   {{/each}}
   <hr>
+</div>
 
 <p>Your friends</p>
   {{#each userFriends}}<!--Looping threw friends-->
@@ -24,7 +27,7 @@
 <template name="requestsList"><!--Logic written in users-list.js-->
   	<div class="media">
   		<div class="media-left">
-      			<img class="media-object" src="{{profile.userImg}}" style="width:64px">
+      			<img class="media-object img-circle" src="{{profile.userImg}}" style="width:64px">
   		</div>
   		<div class="media-body">
     		<h4 class="media-heading">{{profile.name}}</h4>
@@ -39,11 +42,11 @@
 <template name="firendsList"><!--Logic written in users-list.js-->
   	<div class="media" name="participant">
   		<div class="media-left">
-      			<img class="media-object" src="{{friend.profile.userImg}}" style="width:64px">
+      			<img class="media-object img-circle" src="{{friend.profile.userImg}}" style="width:64px">
   		</div>
   		<div class="media-body">
     		<h5 class="media-heading">{{friend.profile.name}}</h5>
-        <p>{{lastMessage}}</p>
+        <p>{{#emojione}}{{lastMessage}}{{/emojione}}</p>
   		</div>
 	</div>
 </template>

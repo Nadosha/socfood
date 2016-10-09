@@ -51,3 +51,16 @@ Template.messageHistory.helpers({
     	return participant;
 	}
 });
+
+Template.messageItem.onRendered(function () {
+	var $heightOfBlock = $('#chat-box-wrapper').height();
+	$('.chat-box').scrollTop($heightOfBlock);
+
+	$('.message-bubble').mouseenter(function() {
+		$('p', this).fadeIn('slow');
+	});
+
+	$('.message-bubble').mouseleave(function() {
+		$('p', this).fadeOut('slow');
+	})
+})

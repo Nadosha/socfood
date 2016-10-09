@@ -1,0 +1,118 @@
+.messages-head {
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 5px;
+}
+
+.chat-box {
+	position: relative;
+	display: block;
+	margin-top: 10px;
+    padding: 5px 35px 54px;
+  	overflow: scroll;
+  	height: -moz-calc(100% - 30px);
+  	height: -webkit-calc(100% - 30px);
+  	height: -o-calc(100% - 30px);
+  	height: calc(100% - 30px);
+}
+
+.message-bubble {
+	font-size: 16px;
+	position: relative;
+	display: inline-block;
+	clear: both;
+	padding: 13px 14px;
+	vertical-align: top;
+	max-width: 70%;
+}
+
+.message-bubble:before {
+	position: absolute;
+	top: 14px;
+	display: block;
+	width: 8px;
+	height: 6px;
+	content: '\00a0';
+	-moz-transform: rotate(29deg) skew(-35deg);
+ 	-ms-transform: rotate(29deg) skew(-35deg);
+ 	-webkit-transform: rotate(29deg) skew(-35deg);
+  	transform: rotate(29deg) skew(-35deg);
+}
+
+.message-bubble.you {
+	float: left;
+	-webkit-align-self: flex-start;
+  	align-self: flex-start;
+	/*animation*/
+}
+
+	.message-bubble.you .message-bubble-text {
+		color: #fff;
+		background: #ffd021;
+		padding: 13px 14px;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		text-overflow: ellipsis;
+	}
+
+	.message-bubble.you .message-bubble-time {
+		height: 11px;
+		color: #c4c4c4;
+		font-size: 11px;
+		float: right;
+
+	}
+
+		.message-bubble.you .message-bubble-time p {
+			display: none;
+		}
+
+	.message-bubble.you  a {
+		text-decoration-style: line;
+		color: white;
+	}
+
+.message-bubble.me {
+	float: right;
+	-webkit-align-self: flex-end;
+  	align-self: flex-end;
+}
+
+	.message-bubble.me .message-bubble-text {
+		color: #fff;
+		background: #5BC0DE;
+		padding: 13px 14px;
+		border-radius: 5px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		text-overflow: ellipsis;
+	}
+
+	.message-bubble.me .message-bubble-time {
+		height: 11px;
+		color: #c4c4c4;
+		font-size: 11px;
+		float: left;
+	} 
+
+	.message-bubble.me .message-bubble-time p {
+		display: none;
+	}
+
+	.message-bubble.me  a {
+		text-decoration-style: line;
+		color: white;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+

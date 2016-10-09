@@ -1,3 +1,10 @@
 <template name="messageInput">
-	<input name="message-input" type="text" class="form-control" placeholder="Text input">
+{{#if isHomePage}}
+	<div class="input-group" id="email-input">
+		<div class="input-item">
+			<span class="fa fa-comments input-helper"></span>
+			<input id="email-input" type="text" name="message-input" placeholder="Say hello!">
+		</div>
+	</div>
+{{/if}}
 </template>

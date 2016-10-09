@@ -20,8 +20,5 @@ Template.modalUsers.events({
 	'click #addToFriends': function(event) {
 		event.preventDefault();
 		this.requestFriendship();
-		var participant = Meteor.users.findOne({_id:this._id});
-		var conversation = new Conversation().save();
-		conversation.addParticipant(participant);
 	}
 });
