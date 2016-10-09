@@ -28,5 +28,12 @@ Template.sellersList.events({
 		Session.set('sellerId', this._id)
 		Modal.show('addProductsForm');
 
+	},
+	'click #makeOrder': function(event, template) {
+		event.preventDefault();
+		var checked = template.findAll("input[type=checkbox]:checked");
+		var arr = checked.map(function(item) {
+			return item.id;
+		});
 	}
 });
